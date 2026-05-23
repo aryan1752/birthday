@@ -975,7 +975,6 @@ audio {
 	-o-transform:translate(0px,-500px);
 	-ms-transform:translate(0px,-500px);
 	transform:translate(0px,-500px);
-
 }
 .bannar-come {
 	-webkit-animation: bannar_come linear 6s;
@@ -1308,3 +1307,117 @@ audio {
     		-webkit-transform: scale(0.9);
     	}
     }*/
+
+/* Stage and Card Styling */
+#stage {
+	display: none;
+	position: relative;
+	width: 100%;
+	height: 380px;
+	margin: 20px auto 60px auto;
+	min-height: 380px;
+}
+
+#stage.visible {
+	display: block;
+	-webkit-animation: stage_fadein 0.5s ease-in;
+	-moz-animation: stage_fadein 0.5s ease-in;
+	-o-animation: stage_fadein 0.5s ease-in;
+	-ms-animation: stage_fadein 0.5s ease-in;
+	animation: stage_fadein 0.5s ease-in;
+}
+
+@-webkit-keyframes stage_fadein {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@-moz-keyframes stage_fadein {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@-o-keyframes stage_fadein {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@-ms-keyframes stage_fadein {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@keyframes stage_fadein {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+.card {
+	position: absolute;
+	width: 300px;
+	height: auto;
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+	cursor: move;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	transition: box-shadow 0.3s ease;
+	left: 50%;
+	top: 50%;
+	margin-left: -150px;
+	margin-top: -170px;
+}
+
+.card:hover {
+	box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.card.dragging {
+	box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+	opacity: 0.95;
+}
+
+.card-photo {
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+	border-radius: 5px 5px 0 0;
+}
+
+.card-photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.card-label {
+	padding: 10px;
+	text-align: center;
+	font-family: 'Signika', sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+}
+
+.tape {
+	position: absolute;
+	width: 60px;
+	height: 25px;
+	background: rgba(255,255,255,0.7);
+	border: 1px solid rgba(0,0,0,0.1);
+	top: -15px;
+	left: 50%;
+	margin-left: -30px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	z-index: 10;
+}
+
+.hint {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-family: 'Signika', sans-serif;
+	font-size: 14px;
+	color: #999;
+	font-style: italic;
+}
